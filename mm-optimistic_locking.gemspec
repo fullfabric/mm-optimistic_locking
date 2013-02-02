@@ -33,10 +33,10 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'mongo_mapper', '>=0.11.1'
   s.add_dependency 'activesupport', '~>3.2'
-  
-  s.add_dependency 'mongo', '1.6.2'
-  s.add_dependency 'bson', '1.6.2'
-  s.add_dependency 'bson_ext', '1.6.2'
+
+  s.add_dependency 'mongo', '>=1.6.2'
+  s.add_dependency 'bson', '>=1.6.2'
+  s.add_dependency 'bson_ext', '>=1.6.2'
 
   s.add_development_dependency 'rake', '~>0.8.7'
   s.add_development_dependency 'rspec', '~>2.6.0'
