@@ -32,10 +32,9 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_dependency 'mongo_mapper', '0.13.1'
+  s.add_dependency 'mongo', '1.12.5'
+
   s.add_dependency 'activesupport', '~>3.2'
-  s.add_dependency 'mongo', '1.8.2'
-  s.add_dependency 'bson', '1.8.2'
-  s.add_dependency 'bson_ext', '1.8.2'
 
   s.add_development_dependency 'bundler', '~> 1.6'
   s.add_development_dependency 'rake', '~> 10.0'
