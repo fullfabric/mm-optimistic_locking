@@ -1,6 +1,8 @@
 mm-optimistic_locking
 =====================
 
+[![Build Status](https://semaphoreci.com/api/v1/fullfabric/mm-optimistic_locking/branches/master/badge.svg)](https://semaphoreci.com/fullfabric/mm-optimistic_locking)
+
 mm-optimistic_locking implements optimistic locking in mongo_mapper.
 
 Forked from https://github.com/highgroove/mm-optimistic_locking
