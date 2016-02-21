@@ -1,6 +1,8 @@
 require 'rubygems'
 require 'bundler/setup'
 
+require 'pry-byebug'
+
 require 'rspec'
 require 'database_cleaner'
 

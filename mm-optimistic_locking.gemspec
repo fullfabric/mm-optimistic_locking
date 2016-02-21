@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mm-optimistic_locking"
-  s.version     = "0.0.5"
+  s.version     = "1.0.0"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/mm-optimistic_locking"
@@ -31,14 +31,26 @@ Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
 
-  s.add_dependency 'mongo_mapper', '>=0.11.1'
+  s.add_dependency 'mongo_mapper', '0.13.1'
   s.add_dependency 'activesupport', '~>3.2'
+  s.add_dependency 'mongo', '1.8.2'
+  s.add_dependency 'bson', '1.8.2'
+  s.add_dependency 'bson_ext', '1.8.2'
 
-  s.add_dependency 'mongo', '>=1.6.2'
-  s.add_dependency 'bson', '>=1.6.2'
-  s.add_dependency 'bson_ext', '>=1.6.2'
+  s.add_development_dependency 'bundler', '~> 1.6'
+  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'rspec', '~> 3.2'
+  s.add_development_dependency 'rspec-its', '~> 1.2'
+  s.add_development_dependency 'rspec-nc'
+  s.add_development_dependency 'guard-rspec', '~> 4.5'
+  s.add_development_dependency 'factory_girl', '~> 4.2.0'
+  s.add_development_dependency 'faker'
+  s.add_development_dependency 'binding_of_caller'
+  s.add_development_dependency 'pry-byebug'
 
-  s.add_development_dependency 'rake', '~>0.8.7'
-  s.add_development_dependency 'rspec', '~>2.6.0'
-  s.add_development_dependency 'database_cleaner', '~>0.6.7'
+  s.add_development_dependency 'database_cleaner', '~> 1.4'
+
+  # s.add_development_dependency 'combustion', '~> 0.5.4'
+  # s.add_development_dependency 'tzinfo'
+
 end
