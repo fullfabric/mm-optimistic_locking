@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
 
-  s.add_dependency 'mongo_mapper'
+  s.add_dependency 'mongo_mapper', "~> 0.13.0"
   s.add_dependency 'activesupport', '< 5.0'
 
   s.add_development_dependency 'bundler'
@@ -47,6 +47,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'faker'
   s.add_development_dependency 'binding_of_caller'
   s.add_development_dependency 'pry-byebug'
+  s.add_development_dependency 'bson_ext'
+  s.add_development_dependency 'bigdecimal', "~> 1.3.5"
 
   s.add_development_dependency 'database_cleaner', '~> 1.4'
 
