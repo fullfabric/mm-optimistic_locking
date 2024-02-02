@@ -13,7 +13,7 @@ end
 
 require File.expand_path("../lib/mm-optimistic_locking", File.dirname(__FILE__))
 
-MongoMapper.connection = Mongo::Connection.new('localhost', 27017)
+MongoMapper.connection = Mongo::Client.new(['localhost:27017'])
 MongoMapper.database = "mm-optimistic_locking_test"
 
 RSpec.configure do |c|

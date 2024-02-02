@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mm-optimistic_locking"
-  s.version     = "1.0.1"
+  s.version     = "2.0.0"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/mm-optimistic_locking"
@@ -30,9 +30,11 @@ Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
 
+  # Mongo driver version locking to keep support for MongoDB < 3.6
+  s.add_dependency 'mongo', "~> 2.16.0"
 
-  s.add_dependency 'mongo_mapper', "~> 0.13.0"
-  s.add_dependency 'activesupport', '< 5.0'
+  s.add_dependency 'mongo_mapper', "~> 0.15.0"
+  s.add_dependency 'activesupport', '~> 5.0'
 
   s.add_development_dependency 'bundler'
   s.add_development_dependency 'rake'
