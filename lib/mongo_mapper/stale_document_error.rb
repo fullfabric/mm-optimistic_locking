@@ -22,9 +22,14 @@ module MongoMapper
     end
 
     # Models built at runtime are anonymous subclasses; walk up to a named one.
+    # Reaching Object means no ancestor named the model, so fall back to the
+    # class itself rather than report every such document as "Object".
     def named_class(klass)
-      klass = klass.superclass while klass.name.nil? && klass.superclass
-      klass.name || klass.inspect
+      named = klass
+      named = named.superclass while named.name.nil? && named.superclass
+      return klass.inspect if named == Object || named.name.nil?
+
+      named.name
     end
   end
 end

@@ -1,13 +1,12 @@
 describe MongoMapper::StaleDocumentError do
+  # A real constant, not `def self.name`: a subclass INHERITS a redefined
+  # self.name, which would leave the anonymous-subclass example below asserting
+  # nothing.
   let(:model) do
-    Class.new do
+    stub_const("BlogPost", Class.new do
       include MongoMapper::Document
       plugin MongoMapper::Plugins::OptimisticLocking
-
-      def self.name
-        "BlogPost"
-      end
-    end
+    end)
   end
 
   it "names the document by class and id instead of dumping its attributes" do
@@ -19,11 +18,22 @@ describe MongoMapper::StaleDocumentError do
   end
 
   it "walks up to the first named class for anonymous subclasses" do
-    document = Class.new(model).new
+    subclass = Class.new(model)
+    document = subclass.new
 
+    expect(subclass.name).to be_nil # otherwise this example never exercises the walk
     expect(described_class.new(document).message).to eq(
       "Document BlogPost #{document.id} is stale and must be reloaded from MongoDB"
     )
+  end
+
+  it "falls back to the class itself when no ancestor names the model" do
+    document = Class.new { include MongoMapper::Document }.new
+
+    message = described_class.new(document).message
+
+    expect(message).to match(/\ADocument #<Class:0x[0-9a-f]+> #{document.id} is stale/)
+    expect(message).not_to include("Document Object")
   end
 
   it "names an embedded document, which is not a MongoMapper::Document" do
