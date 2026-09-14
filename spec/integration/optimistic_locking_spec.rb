@@ -48,7 +48,7 @@ describe "optimistic locking plugin" do
           expect {
             subject.foo_text = "foo bar baz"
             subject.save
-          }.to raise_error(MongoMapper::StaleDocumentError)
+          }.to raise_error(MongoMapper::StaleDocumentError) { |error| expect(error.document).to be(subject) }
 
         end
 

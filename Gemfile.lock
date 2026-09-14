@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    mm-optimistic_locking (3.0.0)
-      activesupport (~> 6.0)
+    mm-optimistic_locking (3.2.0)
+      activesupport (>= 6.0, < 8.0)
       mongo (~> 2.16.0)
       mongo_mapper (~> 0.15.0)
 
