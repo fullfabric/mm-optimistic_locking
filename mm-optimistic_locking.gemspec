@@ -31,7 +31,7 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   # Mongo driver version locking to keep support for MongoDB < 3.6
-  s.add_dependency 'mongo', "~> 2.16.0"
+  s.add_dependency 'mongo', "~> 2.16"
 
   s.add_dependency 'mongo_mapper', "~> 0.15.0"
   s.add_dependency 'activesupport', '>= 6.0', '< 8.0'
