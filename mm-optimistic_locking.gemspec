@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mm-optimistic_locking"
-  s.version     = "3.2.0"
+  s.version     = "3.2.1"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/mm-optimistic_locking"
