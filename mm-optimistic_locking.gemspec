@@ -51,6 +51,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'bson_ext'
 
-  s.add_development_dependency 'database_cleaner', '~> 1.4'
+  # 1.99 cannot parse Ruby 3.4 backtraces and 2.x drops MongoMapper
+  s.add_development_dependency 'database_cleaner', '~> 1.8.0'
 
 end
