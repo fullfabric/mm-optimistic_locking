@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |s|
   s.name        = "mm-optimistic_locking"
-  s.version     = "3.2.0"
+  s.version     = "3.2.1"
   s.authors     = ["Andy Lindeman"]
   s.email       = ["andy@highgroove.com"]
   s.homepage    = "http://github.com/highgroove/mm-optimistic_locking"
@@ -51,6 +51,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'bson_ext'
 
-  s.add_development_dependency 'database_cleaner', '~> 1.4'
+  # 1.99 cannot parse Ruby 3.4 backtraces and 2.x drops MongoMapper
+  s.add_development_dependency 'database_cleaner', '~> 1.8.0'
 
 end
